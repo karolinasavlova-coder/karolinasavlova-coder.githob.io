@@ -3,86 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etapa | Karolína Šavlová</title>
+    <title>Etapa | Internetový časopis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Definice barev a základní styl */
-       body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Praha1.jpg */
-    background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('praha.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+        :root {
+            --bg-soft: #353b48;      /* Jemná břidlicová šedá */
+            --cream: #f5f6fa;        /* Krémová bílá pro text */
+            --gold-muted: #dcdde1;   /* Matná stříbrno-zlatá pro názvy */
+            --soft-blue: #718093;    /* Tlumená modrá pro linky */
+            --dusty-rose: #a55eea;   /* Jemná zastřená barva pro akcenty */
+            --deep-red: #822a24;     /* Tlumená vínová (místo ostré červené) */
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background-color: var(--bg-soft);
+            color: var(--cream);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            letter-spacing: 0.5px;
+        }
 
-        .karta {
-            background-color: #34495e; /* Světlejší tmavě šedá */
-            border-top: 5px solid #e74c3c; /* Červený detail nahoře */
-            border-bottom: 5px solid #3498db; /* Modrý detail dole */
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            max-width: 400px;
-            text-align: center;
+        /* Navigace */
+        nav {
+            padding: 40px 60px;
+        }
+
+        nav a {
+            color: var(--cream);
+            font-size: 1.4rem;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: 0.4s;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            color: var(--gold-muted);
+        }
+
+        /* Hlavní obsah */
+        main {
+            flex: 1;
+            padding: 0 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         h1 {
-            color: #f1c40f; /* Žlutá pro název Etapa */
-            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(4rem, 15vw, 9rem);
+            margin: 0;
+            color: var(--gold-muted);
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .slogan {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.6rem;
+            color: var(--deep-red);
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .author {
+            font-weight: 300;
             text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin-top: 0;
-            color: #ffffff;
-        }
-
-        .podtrzitko {
-            height: 3px;
-            width: 50px;
-            background-color: #f1c40f; /* Žlutý detail */
-            margin: 20px auto;
-        }
-
-        p {
-            line-height: 1.6;
-            color: #bdc3c7; /* Světle šedý text pro popis */
-            font-size: 1.1rem;
-        }
-
-        .kontakt-btn {
+            font-size: 0.9rem;
+            margin-top: 30px;
+            letter-spacing: 4px;
+            border-bottom: 1px solid var(--soft-blue);
             display: inline-block;
-            margin-top: 25px;
-            padding: 10px 20px;
-            background-color: #e74c3c; /* Červená */
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
+            padding-bottom: 10px;
+            width: fit-content;
         }
 
-        .kontakt-btn:hover {
-            background-color: #3498db; /* Změna na modrou při najetí */
+        /* Odkaz na nejnovější článek - zarovnaný vpravo */
+        .cta-container {
+            text-align: right;
+            margin-top: 40px;
+        }
+
+        .article-link {
+            font-family: 'Playfair Display', serif;
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 1.3rem;
+            border: 1px solid var(--cream);
+            padding: 12px 30px;
+            transition: 0.4s;
+        }
+
+        .article-link:hover {
+            background: var(--cream);
+            color: var(--bg-soft);
+        }
+
+        /* Footer */
+        footer {
+            padding: 30px 60px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--soft-blue);
         }
     </style>
 </head>
 <body>
 
-    <div class="karta">
+    <nav>
+        <a href="index.html"><i class="fa-regular fa-circle-dot"></i></a> </nav>
+
+    <main>
         <h1>Etapa</h1>
-        <h2>Karolína Šavlová</h2>
-        <div class="podtrzitko"></div>
-        <p>Ahoj, jsem studentka střední školy v Praze a ráda čtu.</p>
-        <a href="#" class="kontakt-btn">Více o mně</a>
-    </div>
+        <p class="slogan">spotlight na nová témata</p>
+        <div class="author">Karolína Šavlová</div>
+
+        <div class="cta-container">
+            <a href="clanek.html" class="article-link">Číst nejnovější vydání</a>
+        </div>
+    </main>
+
+    <footer>
+        internetový časopis
+    </footer>
 
 </body>
 </html>
