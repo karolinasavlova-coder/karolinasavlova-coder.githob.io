@@ -10,7 +10,8 @@
         :root {
             --bg-soft: #353b48;
             --cream: #f5f6fa;
-            --deep-red: #822a24;
+            --accent-red: #ff3e3e;
+            --line-yellow: rgba(255, 223, 0, 0.1);
         }
 
         body {
@@ -19,16 +20,23 @@
             background-color: var(--bg-soft);
             color: var(--cream);
             line-height: 1.8;
+            position: relative;
         }
 
-        nav {
-            padding: 40px 60px;
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 1px;
+            background: var(--line-yellow);
+            transform: rotate(-15deg);
+            z-index: -1;
         }
 
-        nav a {
-            color: var(--cream);
-            font-size: 1.4rem;
-        }
+        nav { padding: 40px 60px; }
+        nav a { color: var(--cream); font-size: 1.4rem; }
 
         article {
             max-width: 750px;
@@ -39,30 +47,23 @@
         h2 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
-            line-height: 1.2;
+            color: var(--accent-red); /* Výraznější název článku */
             margin-bottom: 50px;
         }
 
-        .content {
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: rgba(245, 246, 250, 0.9);
-        }
-
-        /* Elegantní první písmeno */
         .content p::first-letter {
             font-family: 'Playfair Display', serif;
             font-size: 4rem;
             float: left;
             margin-right: 15px;
             line-height: 1;
-            color: var(--deep-red);
+            color: var(--accent-red);
         }
 
         .article-footer {
             margin-top: 80px;
             padding-top: 20px;
-            border-top: 1px solid rgba(245, 246, 250, 0.2);
+            border-top: 1px solid var(--accent-red);
             font-family: 'Playfair Display', serif;
             font-style: italic;
         }
@@ -75,13 +76,12 @@
     </nav>
 
     <article>
-        <h2>O tichu, které mluví hlasitěji než slova</h2>
+        <h2>Název nejnovějšího článku</h2>
         <div class="content">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.</p>
         </div>
         <div class="article-footer">
-            Napsala Karolína Šavlová
+            Autor: Karolína Šavlová
         </div>
     </article>
 
