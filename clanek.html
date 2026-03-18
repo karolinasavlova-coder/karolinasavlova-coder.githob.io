@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Článek | Etapa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-soft: #353b48;
+            --cream: #f5f6fa;
+            --deep-red: #822a24;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background-color: var(--bg-soft);
+            color: var(--cream);
+            line-height: 1.8;
+        }
+
+        nav {
+            padding: 40px 60px;
+        }
+
+        nav a {
+            color: var(--cream);
+            font-size: 1.4rem;
+        }
+
+        article {
+            max-width: 750px;
+            margin: 40px auto 100px;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .content {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: rgba(245, 246, 250, 0.9);
+        }
+
+        /* Elegantní první písmeno */
+        .content p::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            float: left;
+            margin-right: 15px;
+            line-height: 1;
+            color: var(--deep-red);
+        }
+
+        .article-footer {
+            margin-top: 80px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(245, 246, 250, 0.2);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html"><i class="fas fa-home"></i></a>
+    </nav>
+
+    <article>
+        <h2>O tichu, které mluví hlasitěji než slova</h2>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.</p>
+        </div>
+        <div class="article-footer">
+            Napsala Karolína Šavlová
+        </div>
+    </article>
+
+</body>
+</html>
