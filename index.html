@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --bg-soft: #353b48;      /* Jemná břidlicová šedá */
-            --cream: #f5f6fa;        /* Krémová bílá pro text */
-            --gold-muted: #dcdde1;   /* Matná stříbrno-zlatá pro názvy */
-            --soft-blue: #718093;    /* Tlumená modrá pro linky */
-            --dusty-rose: #a55eea;   /* Jemná zastřená barva pro akcenty */
-            --deep-red: #822a24;     /* Tlumená vínová (místo ostré červené) */
+            --bg-soft: #353b48;
+            --cream: #f5f6fa;
+            --gold-muted: #dcdde1;
+            --soft-blue: #718093;
+            --accent-red: #ff3e3e; /* Výraznější, svítivější červená */
+            --line-yellow: rgba(255, 223, 0, 0.15); /* Jemná, průsvitná žlutá linka */
         }
         
         body {
@@ -24,41 +24,52 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            letter-spacing: 0.5px;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        /* Navigace */
+        /* Diagonální linka na pozadí */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 1px;
+            background: var(--line-yellow);
+            transform: rotate(35deg);
+            transform-origin: top left;
+            z-index: -1;
+        }
+
         nav {
             padding: 40px 60px;
+            z-index: 10;
         }
 
         nav a {
             color: var(--cream);
             font-size: 1.4rem;
             text-decoration: none;
-            opacity: 0.8;
-            transition: 0.4s;
+            transition: 0.3s;
         }
 
-        nav a:hover {
-            opacity: 1;
-            color: var(--gold-muted);
-        }
+        nav a:hover { color: var(--accent-red); }
 
-        /* Hlavní obsah */
         main {
             flex: 1;
             padding: 0 10%;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            z-index: 5;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(4rem, 15vw, 9rem);
             margin: 0;
-            color: var(--gold-muted);
+            color: var(--gold-muted); /* Název Etapa */
             font-weight: 700;
             line-height: 1;
         }
@@ -66,10 +77,12 @@
         .slogan {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.6rem;
-            color: var(--deep-red);
-            margin-top: 10px;
+            font-size: 1.8rem;
+            color: var(--accent-red); /* Výrazný slogan */
+            margin-top: 15px;
             letter-spacing: 1px;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 62, 62, 0.2);
         }
 
         .author {
@@ -81,10 +94,8 @@
             border-bottom: 1px solid var(--soft-blue);
             display: inline-block;
             padding-bottom: 10px;
-            width: fit-content;
         }
 
-        /* Odkaz na nejnovější článek - zarovnaný vpravo */
         .cta-container {
             text-align: right;
             margin-top: 40px;
@@ -95,17 +106,16 @@
             color: var(--cream);
             text-decoration: none;
             font-size: 1.3rem;
-            border: 1px solid var(--cream);
+            border: 1px solid var(--accent-red);
             padding: 12px 30px;
             transition: 0.4s;
         }
 
         .article-link:hover {
-            background: var(--cream);
-            color: var(--bg-soft);
+            background: var(--accent-red);
+            color: white;
         }
 
-        /* Footer */
         footer {
             padding: 30px 60px;
             font-size: 0.7rem;
@@ -118,7 +128,8 @@
 <body>
 
     <nav>
-        <a href="index.html"><i class="fa-regular fa-circle-dot"></i></a> </nav>
+        <a href="index.html"><i class="fas fa-home"></i></a>
+    </nav>
 
     <main>
         <h1>Etapa</h1>
@@ -126,7 +137,7 @@
         <div class="author">Karolína Šavlová</div>
 
         <div class="cta-container">
-            <a href="clanek.html" class="article-link">Číst nejnovější vydání</a>
+            <a href="clanek.html" class="article-link">Nejnovější článek →</a>
         </div>
     </main>
 
@@ -135,4 +146,3 @@
     </footer>
 
 </body>
-</html>
