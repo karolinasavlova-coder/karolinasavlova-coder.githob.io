@@ -99,6 +99,10 @@
         .cta-container {
             text-align: right;
             margin-top: 40px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px; /* Mezera mezi tlačítky */
+            flex-wrap: wrap;
         }
 
         .article-link {
@@ -109,6 +113,7 @@
             border: 1px solid var(--accent-red);
             padding: 12px 30px;
             transition: 0.4s;
+            white-space: nowrap;
         }
 
         .article-link:hover {
@@ -122,6 +127,14 @@
             text-transform: uppercase;
             letter-spacing: 5px;
             color: var(--soft-blue);
+        }
+
+        /* Styl pro mobilní zařízení, aby tlačítka nebyla nalepená na sobě */
+        @media (max-width: 600px) {
+            .cta-container {
+                flex-direction: column;
+                align-items: flex-end;
+            }
         }
     </style>
 </head>
@@ -137,6 +150,8 @@
         <div class="author">Karolína Šavlová</div>
 
         <div class="cta-container">
+            <a href="Valecia___City_of_arts_and_sciences.pdf" class="article-link" target="_blank">Moje oblíbené místo</a>
+            
             <a href="clanek.html" class="article-link">Nejnovější článek →</a>
         </div>
     </main>
@@ -146,3 +161,4 @@
     </footer>
 
 </body>
+</html>
